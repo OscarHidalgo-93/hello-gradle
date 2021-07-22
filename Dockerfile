@@ -5,6 +5,9 @@ FROM gradle:7.1.1-jdk11
 #crear un directorio de trabajo:
 WORKDIR /opt/hello-gradle
 #Copiar en el workdir lo de gradle
-COPY ./ ./
+#COPY ./ ./
+COPY build/libs/demo-0.0.1-SNAPSHOT.jar ./
 #Correr el SpringBoot
-CMD ./gradlew bootRun
+#CMD ./gradlew bootRun 
+CMD java -jar demo-0.0.1-SNAPSHOT.jar
+# java -jar build/libs/demo-0.0.1-SNAPSHOT.jar | Para hacerlo desde el ejecutable pre creado.
