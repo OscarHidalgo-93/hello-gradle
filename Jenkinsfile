@@ -8,9 +8,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh '''
+                echo 'Buildeando...'
+                withGradle {
+    // some block
+    sh '''
                  ./gradlew assemble \
-'''
+       '''
+}
+                 
             }
         }
         stage('Archive') {
