@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Build') {
             steps {
                 echo 'Buildeando...'
@@ -17,15 +18,15 @@ pipeline {
                             }
                  
             
+            }
         
-
         post{
             success{
                 echo 'Archivando..'
                 archiveArtifacts artifacts: 'build/libs/*.jar'
             }
              }
-    
+        }
         stage('Archive') {
             steps {
                 
@@ -35,6 +36,6 @@ pipeline {
         
         }
 }
-    }
-}   
+    
+   
 
