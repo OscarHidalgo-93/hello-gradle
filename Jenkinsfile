@@ -27,10 +27,10 @@ pipeline {
             }
              }
         }
-        stage('Archive') {
+        stage('Deploying') {
             steps {
                 
-                echo 'Se arcivó el artefacto...'
+                echo 'Se arcivó el artefacto, Desplegando...'
             }
         }
         
