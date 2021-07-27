@@ -14,17 +14,27 @@ pipeline {
     sh '''
                  ./gradlew assemble \
        '''
-}
+                            }
                  
-            }
-        }
-        stage('Archive') {
-            steps {
+            
+        
+
+        post{
+            success{
                 echo 'Archivando..'
                 archiveArtifacts artifacts: 'build/libs/*.jar'
+            }
+             }
+    
+        stage('Archive') {
+            steps {
+                
+                
             }
         }
         
         }
+}
     }
+}   
 
