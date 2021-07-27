@@ -22,7 +22,7 @@ pipeline {
         
         post{
             success{
-                echo 'Archivando..'
+                echo 'Archivando...'
                 archiveArtifacts artifacts: 'build/libs/*.jar'
             }
              }
@@ -30,7 +30,7 @@ pipeline {
         stage('Archive') {
             steps {
                 
-                
+                echo 'Se arcivó el artefacto...'
             }
         }
         
